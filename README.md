@@ -30,3 +30,5 @@ And that should be it!
 -Adding Tags, helpful if you list socket types, useful prot info on these.<br>
 -Improve mini-cart updating. Not working with AJAX at the moment.<br>
 -Removing lots of useless code and tidying up files.<br>
+
+To see what it looks like and our process, have a look at our main site article: http://www.littleportitservices.co.uk/our-first-plugin/
