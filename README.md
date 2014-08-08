@@ -26,7 +26,7 @@ Create the products and set them up.
 Install plugin, and set up the base category, options.
 And that should be it!
 <h4>Current Issues and 'working ons'</h4>
--Testing SubCategories, some odd effects.<br>
+-Testing SubCategories, some odd effects. In fact, I'd say create categories for the builder, then share products in from their current. Removing them takes a bit of effort in DB tables<br>
 -Adding Tags, helpful if you list socket types, useful prot info on these.<br>
 -Improve mini-cart updating. Not working with AJAX at the moment.<br>
 -Removing lots of useless code and tidying up files.<br>
