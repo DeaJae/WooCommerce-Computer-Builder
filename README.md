@@ -28,7 +28,7 @@ And that should be it!
 <h4>Current Issues and 'working ons'</h4>
 -Testing SubCategories, some odd effects. In fact, I'd say create categories for the builder, then share products in from their current. Removing them takes a bit of effort in DB tables<br>
 -Adding Tags, helpful if you list socket types, useful prot info on these.<br>
--Improve mini-cart updating. Not working with AJAX at the moment.<br>
+-Improve mini-cart updating. Not working with AJAX at the moment. Have added intructions on how to disable in-plugin cart and use Minicart in sidebar (which AJAX does work for)<br>
 -Removing lots of useless code and tidying up files.<br>
 
 To see what it looks like and our process, have a look at our main site article: http://www.littleportitservices.co.uk/our-first-plugin/
