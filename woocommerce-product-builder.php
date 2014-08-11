@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: WooCommerce Product Builder
- * Plugin URI: https://github.com/philippjbauer/WoocommerceProductBuilder
+ * Plugin Name: WooCommerce Computer Builder
+ * Plugin URI: https://github.com/DeaJae/WooCommerce-Computer-Builder
  * Description: Lets users build their own products.
  * Version: 0.9 | Updated V .01
  * Author: Philipp Bauer | Updated and modified for cart based use by Darren Jermy
