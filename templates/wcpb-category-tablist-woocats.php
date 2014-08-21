@@ -1,6 +1,9 @@
 <?php
 /**
  * WooCommerce Product Builder Tablist Template
+ * @author Philipp Bauer <philipp.bauer@vividdesign.de> | modified by Darren Jermy (www.littleportitservices.co.uk)
+ * Tablist using Woocommerce categories without creating DB entries in WCPB
+ * @version 0.9.1
  * @author Philipp Bauer <philipp.bauer@vividdesign.de>
  * @version 0.9
  */
