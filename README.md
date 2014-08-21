@@ -24,9 +24,7 @@ Added a file called Tablist-woocats which will read categories from provided cat
 
 <h3>instructions</h3>
 Create a main category containing your products.
-Create the child categories to house the options.
-Create the products and set them up.
-Install plugin, and set up the base category, options.
+Install plugin. Put that Category's ID in tablist-woocat.php's array (left '90' in its place for time being)
 And that should be it!
 
 <h4>Current Issues and 'working ons'</h4>
@@ -35,5 +33,6 @@ And that should be it!
 -Improve mini-cart updating. Not working with AJAX at the moment. Decided to push sidebar minicart usage to fix.<br>
 -Removing lots of useless code and tidying up files.<br>
 -CSS improvements
+-will get a switch for plugin's base category to be set from admin page, not had time to do this yet.
 
 To see what it looks like and our process, have a look at our main site article: http://www.littleportitservices.co.uk/our-first-plugin/
