@@ -45,6 +45,6 @@ class WC_Product_Builder_Frontend extends WC_Product_Builder {
 
 }
 
-$GLOBALS['wcpb_frontend'] = new WC_Product_Builder_Frontend();
+$global['wcpb_frontend'] = new WC_Product_Builder_Frontend();
 
 ?>

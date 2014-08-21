@@ -38,7 +38,7 @@ if ( ! class_exists( 'WC_Product_Builder' ) && $bool_woocommerce_active ) {
 		 * Current WooCommerce Product Builder Version
 		 * @var string
 		 */
-		private $str_version = "0.9";
+		private $str_version = "0.9.1";
 		
 		/**
 		 * Version Option Name (wp_options)
@@ -68,13 +68,13 @@ if ( ! class_exists( 'WC_Product_Builder' ) && $bool_woocommerce_active ) {
 		 * WCPB Product Category Term (taxonomy)
 		 * @var string
 		 */
-		private $str_productcat_term = 'WCPB Custom Product';
+		#private $str_productcat_term = 'WCPB Custom Product';
 		
 		/**
 		 * WCPB Product Category Slug (taxonomy)
 		 * @var string
 		 */
-		private $str_productcat_slug = 'wcpb-custom-product';
+		#private $str_productcat_slug = 'wcpb-custom-product';
 
 		/**
 		 * Contains the WooCommerce Product Builder options fetched from the database
@@ -86,7 +86,7 @@ if ( ! class_exists( 'WC_Product_Builder' ) && $bool_woocommerce_active ) {
 		 * Contains the max amounts of options a customer can choose per category
 		 * @var array
 		 */
-		private $arr_optioncat_amounts;
+		#private $arr_optioncat_amounts;
 		
 		/**
 		 * Contains the category titles ('slug' => 'post_title')
@@ -210,7 +210,7 @@ if ( ! class_exists( 'WC_Product_Builder' ) && $bool_woocommerce_active ) {
 			if ( false !== get_option( 'wcpb_settings' ) ) {
 				$this->set_settings( get_option( 'wcpb_settings' ) );					// Set WooCommerce Product Builder Settings
 				$arr_settings = $this->get_settings();									// Get Settings
-				$this->set_optioncat_amounts( $arr_settings['optioncat_amounts'] );		// Set how many options may be chosen (per category) by the user
+				#$this->set_optioncat_amounts( $arr_settings['optioncat_amounts'] );		// Set how many options may be chosen (per category) by the user
 				$this->set_optioncat_titles( $arr_settings['optioncat_titles'] );		// Set custom titles for product builder subcategories
 			}
 			else $this->set_settings( array() );

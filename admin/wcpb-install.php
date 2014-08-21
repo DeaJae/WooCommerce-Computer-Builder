@@ -21,7 +21,7 @@ function install_page() {
 			'post_type' 		=> 'page',
 			'post_author' 		=> 1,
 			'post_name' 		=> 'product-builder',
-			'post_title' 		=> __( 'Product Builder', 'wcpb' ),
+			'post_title' 		=> 'Product Builder', 'wcpb' ,
 			'post_content' 		=> '[wc_product_builder_page]',
 			'post_parent' 		=> '',
 			'comment_status' 	=> 'closed'
@@ -37,34 +37,34 @@ function install_page() {
  * Install the product builder category.
  * @return void
  */
-function install_product_cat() {
-	global $wcpb;
+#function install_product_cat() {
+#	global $wcpb;
 	// check if product category exists
-	$mix_term_exists = term_exists( $wcpb->get_productcat_term() );
-	if ( 0 == $mix_term_exists ) {
-		$mix_term_result = wp_insert_term( $wcpb->get_productcat_term(), 'product_cat', array( 'slug' => $wcpb->get_productcat_slug() ) );
-		if ( is_array( $mix_term_result ) )
-			update_option( $wcpb->get_productcat_term_id_option_name(), intval( $mix_term_result['term_id'] ) );
-		else
-			update_option( $wcpb->get_productcat_term_id_option_name(), false );
-	}
-}
+#	$mix_term_exists = term_exists( $wcpb->get_productcat_term() );
+#	if ( 0 == $mix_term_exists ) {
+#		$mix_term_result = wp_insert_term( $wcpb->get_productcat_term(), 'product_cat', array( 'slug' => $wcpb->get_productcat_slug() ) );
+#		if ( is_array( $mix_term_result ) )
+#			update_option( $wcpb->get_productcat_term_id_option_name(), intval( $mix_term_result['term_id'] ) );
+#		else
+#			update_option( $wcpb->get_productcat_term_id_option_name(), false );
+#	}
+#}
 
 /**
  * Install the export directory.
  * @return void
  */
-function install_export_dir() {
-	$arr_upload_dir =  wp_upload_dir();
-	$str_export_url = $arr_upload_dir['basedir'] . '/wcpb_exports';
-
-	if ( wp_mkdir_p( $str_export_url ) && ! file_exists( $str_export_url.'/.htaccess' ) ) {
-		if ( $fh = @fopen( $str_export_url . '/.htaccess', 'w' ) ) {
-			fwrite($fh, 'deny from all');
-			fclose($fh);
-		}
-	}
-}
+#function install_export_dir() {
+#	$arr_upload_dir =  wp_upload_dir();
+#	$str_export_url = $arr_upload_dir['basedir'] . '/wcpb_exports';
+#
+#	if ( wp_mkdir_p( $str_export_url ) && ! file_exists( $str_export_url.'/.htaccess' ) ) {
+#		if ( $fh = @fopen( $str_export_url . '/.htaccess', 'w' ) ) {
+#			fwrite($fh, 'deny from all');
+#			fclose($fh);
+#		}
+#	}
+#}
 
 /**
  * WooCommerce Product Builder Install Routine.
@@ -77,9 +77,9 @@ function install_wc_product_builder() {
 	// Install product page
 	install_page();
 	// Install product category
-	install_product_cat();
+#	install_product_cat();
 	// Install folder for Product Builder exports
-	install_export_dir();
+#	install_export_dir();
 	
 	// Update version
 	update_option( $wcpb->get_version_option_name(), $wcpb->get_version() );

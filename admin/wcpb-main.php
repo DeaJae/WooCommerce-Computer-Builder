@@ -51,20 +51,20 @@ if ( ! empty( $arr_postdata ) ) {
 	}
 
 	// clean out old optioncat titles and amounts (maybe they've been changed in the backend)
-	$arr_compare_titles = array();
-	foreach ( $arr_optioncats as $obj_optioncat )
-		$arr_compare_titles[] = $obj_optioncat->slug;
-	foreach ( $arr_settings_update['optioncat_titles'] as $key => $value )
-		if ( false === array_search( $key, $arr_compare_titles ) )
-			unset( $arr_settings_update['optioncat_titles'][$key], $arr_settings_update['optioncat_amounts'][$key] );
+	#$arr_compare_titles = array();
+	#foreach ( $arr_optioncats as $obj_optioncat )
+	#	$arr_compare_titles[] = $obj_optioncat->slug;
+	#foreach ( $arr_settings_update['optioncat_titles'] as $key => $value )
+	#	if ( false === array_search( $key, $arr_compare_titles ) )
+	#		unset( $arr_settings_update['optioncat_titles'][$key], $arr_settings_update['optioncat_amounts'][$key] );
 
 	// if not all option categories we're custom-titled, set their original titles
-	foreach ( $arr_optioncats as $obj_optioncat )
-		if ( empty( $arr_settings_update['optioncat_titles'][$obj_optioncat->slug] ) )
-			$arr_settings_update['optioncat_titles'][$obj_optioncat->slug] = $obj_optioncat->name;
+	#foreach ( $arr_optioncats as $obj_optioncat )
+	#	if ( empty( $arr_settings_update['optioncat_titles'][$obj_optioncat->slug] ) )
+	#		$arr_settings_update['optioncat_titles'][$obj_optioncat->slug] = $obj_optioncat->name;
 
 	// sort option categories
-	$arr_settings_update['optioncat_titles'] = $wcpb_backend->optioncat_sort( $arr_settings_update['optioncat_titles'] );
+	#$arr_settings_update['optioncat_titles'] = $wcpb_backend->optioncat_sort( $arr_settings_update['optioncat_titles'] );
 
 	// if "allow same option" is set but not posted, set false
 	if ( ! array_key_exists( 'allow-same-option', $arr_postdata ) )
@@ -84,8 +84,8 @@ if ( ! empty( $arr_postdata ) ) {
 
 /* GET NEW SETTINGS */
 $arr_settings = $arr_settings_update;
-$arr_optioncat_amounts = $arr_settings['optioncat_amounts'];
-$arr_optioncat_titles = $arr_settings['optioncat_titles'];
+#$arr_optioncat_amounts = $arr_settings['optioncat_amounts'];
+#$arr_optioncat_titles = $arr_settings['optioncat_titles'];
 ?>
 
 <div class="wrap">
@@ -113,7 +113,7 @@ $arr_optioncat_titles = $arr_settings['optioncat_titles'];
 										<td><input type="text" id="wcpb-currency-symbol" name="postdata[currency_symbol]" placeholder="< ?php _e( 'e.g. €', 'wcpb' ); ?>" value="< ?php echo isset( $arr_settings['currency_symbol'] ) ? $arr_settings['currency_symbol'] : '' ?>"></td>
 									</tr> 
 									<tr>
-										<td><label for="wcpb-tax-information"><?php _e( 'Tax Information (soon to be removed, products/cart independent of plugin..)', 'wcpb' ); ?></label></td>
+										<td><label for="wcpb-tax-information">< ?php _e( 'Tax Information (soon to be removed, products/cart independent of plugin..)', 'wcpb' ); ?></label></td>
 										<td><input type="text" id="wcpb-tax-information" name="postdata[tax_information]" placeholder="< ?php _e( 'e.g. incl. VAT, excl. Shipping', 'wcpb' ); ?>" value="< ?php echo isset( $arr_settings['tax_information'] ) ? $arr_settings['tax_information'] : '' ?>"></td>
 									</tr>-->
 									<!-- <tr>
@@ -140,11 +140,11 @@ $arr_optioncat_titles = $arr_settings['optioncat_titles'];
 											</select>
 										</td>
 									</tr>
-									<tr>
-										<td><label for="option_amount_total"><?php _e( 'Max. Option Amount', 'wcpb' ); ?></label></td>
-										<td><input type="text" id="option_amount_total" name="postdata[optioncat_amount_total]" value="<?php echo $arr_optioncat_amounts['total'] > 1 ? $arr_optioncat_amounts['total'] : 1; ?>"></td>
-									</tr>
 									<!--<tr>
+										<td><label for="option_amount_total">< ?php _e( 'Max. Option Amount', 'wcpb' ); ?></label></td>
+										<td><input type="text" id="option_amount_total" name="postdata[optioncat_amount_total]" value="< ?php echo $arr_optioncat_amounts['total'] > 1 ? $arr_optioncat_amounts['total'] : 1; ?>"></td>
+									</tr>
+									<tr>
 										<td><label for="wcpb-allow-same-option">< ?php _e( 'Allow same Option Multiple Times', 'wcpb' ); ?></label></td>
 										<td><input type="checkbox" id="wcpb-allow-same-option" name="postdata[allow-same-option]" value="true"< ?php echo $arr_settings['allow-same-option'] ? ' checked="checked"' : ''; ?>></td>
 									</tr> -->
@@ -155,7 +155,7 @@ $arr_optioncat_titles = $arr_settings['optioncat_titles'];
 						
 						<div id="wcpb-product_cat" class="wcpb-admin-postbox postbox">
 							<div class="handlediv" title="Click to toggle"><br></div>
-							<h3 class="hndle"><span><?php _e( 'Define Category Amount and Custom Titles', 'wcpb' ); ?></span></h3>
+							<h3 class="handle"><span><?php _e( 'Define Category Amount and Custom Titles', 'wcpb' ); ?></span></h3>
 							<div class="inside">
 								<p><strong><?php _e( 'Maximum amount of options a customer can choose from each category and custom titles (optional).', 'wcpb' ); ?></strong></p>
 								<?php if ( isset( $arr_settings['product_cat'] ) ) : ?>

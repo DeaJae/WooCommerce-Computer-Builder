@@ -1,27 +1,28 @@
 <?php
 /**
  * WooCommerce Product Builder Tablist Template
- * @author Philipp Bauer <philipp.bauer@vividdesign.de> | modified by Darren Jermy (www.littleportitservices.co.uk)
- * Tablist using Woocommerce categories without creating DB entries in WCPB
- * @version 0.9.1
+ * @author Philipp Bauer <philipp.bauer@vividdesign.de>
+ * @version 0.9
  */
 global $wcpb;
-$arr_session_data = $wcpb->get_session_data();
-$unlocked = count( $arr_session_data['current_product'] ) > 0 ? false : false;
-$arr_optioncats = get_categories( 'taxonomy=product_cat&hide_empty=0&hierarchical=1&child_of=' . $arr_settings['product_cat'] );
+
 ?>
 
 <nav class="wcpb-category-tablist">
 <div class="menu-categs-box">	
-			<?php $arr_optioncats = get_terms('product_cat', array('hide_empty' => 0, 'orderby' => 'ASC',  'parent' => 90)); //, 'exclude' => '1,2,3' (Parent is your category containing the wanted Categories.. use its ID)
+			<?php $arr_optioncats = get_terms('product_cat', array('hide_empty' => 0, 'orderby' => 'ASC',  'parent' => 90)); //, 'exclude' => '1,2,3'
 				foreach($arr_optioncats as $arr_optioncat) : 
 					#$wthumbnail_id = get_woocommerce_term_meta( $wcatTerm->term_id, 'thumbnail_id', true );
-					#$wimage = wp_get_attachment_url( $wthumbnail_id );
+					#$wimage = wp_get_attachment_url( $wthumbnail_id ); //Stuff for image on category menu item.. Not needed but left for a possible icon method.
 				?>
+				
 				<ul>
-					<!--<li class="libreak"><php if($wimage!=""):?><img src="<php echo $wimage?>"><php endif;?></li> -->
+					<!--<li class="libreak"><php if($wimage!=""):?><img src="<php echo $wimage?>"><php endif;?></li> // Again for cat images-->
 					<li>
-						<?php echo ( ! isset( $_GET['optioncat'] ) && $i == 1 || isset( $_GET['optioncat'] ) && count( $arr_session_data['options'] ) == 0 && $i == 1 ) ? ' active' : ( isset( $_GET['optioncat'] ) && count( $arr_session_data['options'] ) > 0 && $_GET['optioncat'] == $key ? ' active' : '' ); ?><a href="<?php echo get_permalink( get_the_ID() ) . '?optioncat=' . $arr_optioncat->slug ;?>"><?php echo $arr_optioncat->name; ?> </a> 
+						
+						 
+	   <a <?php {if ($_GET['optioncat'] == $arr_optioncat->slug)
+        echo 'class="active"' ;}?> href="<?php echo get_permalink($arr_optioncat->slug, $arr_optioncat->taxonomy ) . '?optioncat=' . $arr_optioncat->slug; ?>"><?php echo $arr_optioncat->name;?> </a>
 						<ul class="wsubcategs">
 						<?php
 						$wsubargs = array(
@@ -34,7 +35,7 @@ $arr_optioncats = get_categories( 'taxonomy=product_cat&hide_empty=0&hierarchica
 						$wsubcats = get_categories($wsubargs);
 						foreach ($wsubcats as $wsc):
 						?>
-							<li><a href="<?php echo get_permalink( get_the_ID() ) . '?optioncat=' . $arr_optioncat->slug ;?>"><?php echo $arr_optioncat->name ;?></a></li>
+							<li><a href="<?php echo get_permalink($wsc->slug, $wsc->taxonomy )  . '?optioncat=' . $wsc->slug ;?>"><?php echo $wsc->name ;?></a></li>
 						<?php
 						endforeach;
 						?>  

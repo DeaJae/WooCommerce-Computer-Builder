@@ -25,13 +25,10 @@ Create the child categories to house the options.
 Create the products and set them up.
 Install plugin, and set up the base category, options.
 And that should be it!
-
-<h3>Notes</h3>
-Added a file called Tablist-woocats which will read categories from provided category ID which will show the main categories in that ID (no children), included it to not use a SQL value which tends to mess up more. Swappable in builder-page.php.
 <h4>Current Issues and 'working ons'</h4>
--Testing SubCategories, some odd effects. In fact, I'd say create categories for the builder, then share products in from their current. Removing them takes a bit of effort in DB tables<br>
+-Testing SubCategories, some odd effects.<br>
 -Adding Tags, helpful if you list socket types, useful prot info on these.<br>
--Improve mini-cart updating. Not working with AJAX at the moment. Have added intructions on how to disable in-plugin cart and use Minicart in sidebar (which AJAX does work for)<br>
+-Improve mini-cart updating. Not working with AJAX at the moment.<br>
 -Removing lots of useless code and tidying up files.<br>
 
 To see what it looks like and our process, have a look at our main site article: http://www.littleportitservices.co.uk/our-first-plugin/
