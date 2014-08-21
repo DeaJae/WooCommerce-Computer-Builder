@@ -19,6 +19,9 @@ As this plugin is based off that plugin, I'm putting All credit to the Author. A
 Why did I get invovled?<br>
 I saw potential, and wanted something like this to work on my site. Most of the work was done, just not upto date. Naturally I wanted to learn more code and get my first plugin done.
 
+<h3>Notes</h3>
+Added a file called Tablist-woocats which will read categories from provided category ID which will show the main categories in that ID (no children), included it to not use a SQL value which tends to mess up more. Swappable in builder-page.php. Almost everything is now WooCommerce driven rather than plugin aray.
+
 <h3>instructions</h3>
 Create a main category containing your products.
 Create the child categories to house the options.
