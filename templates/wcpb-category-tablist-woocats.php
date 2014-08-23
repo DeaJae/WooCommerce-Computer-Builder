@@ -8,12 +8,13 @@
  * @version 0.9
  */
 global $wcpb;
-
+global $woocommerce,$product;
+$arr_settings = $wcpb->get_settings(); 
 ?>
 
 <nav class="wcpb-category-tablist">
 <div class="menu-categs-box">	
-			<?php $arr_optioncats = get_terms('product_cat', array('hide_empty' => 0, 'orderby' => 'ASC',  'parent' => 90)); //, 'exclude' => '1,2,3'
+			<?php $arr_optioncats = get_terms('product_cat', array('hide_empty' => 0, 'orderby' => 'ASC',  'parent' => $arr_settings['product_cat'])); //, 'exclude' => '1,2,3'
 				foreach($arr_optioncats as $arr_optioncat) : 
 					#$wthumbnail_id = get_woocommerce_term_meta( $wcatTerm->term_id, 'thumbnail_id', true );
 					#$wimage = wp_get_attachment_url( $wthumbnail_id ); //Stuff for image on category menu item.. Not needed but left for a possible icon method.
