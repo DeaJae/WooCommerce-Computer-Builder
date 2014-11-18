@@ -34,7 +34,7 @@ And that should be it!
 -Adding Tags, helpful if you list socket types, useful product info on these.<br>
 -Improve mini-cart updating. Not working with AJAX at the moment. Decided to push sidebar minicart usage to fix.<br>
 -Removing lots of useless code and tidying up files.<br>
--CSS improvements
--FIXED categories are now able to be set from admin
+-CSS improvements<br>
+-FIXED categories are now able to be set from admin<br>
 
-To see what it looks like and our process, have a look at our main site article: http://www.littleportitservices.co.uk/our-first-plugin/
+<p>To see what it looks like and our process, have a look at our main site article: http://www.littleportitservices.co.uk/our-first-plugin/
