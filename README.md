@@ -26,7 +26,7 @@ Added a file called Tablist-woocats which will read categories from provided cat
 Create a main category containing your products, if not already existing.
 Install plugin. 
 Put the intended category to read from into Product Builder/Settings.
-**Put that Category's ID in tablist-woocat.php's array (left '90' in its place for time being) (FIXED) **
+**Put that Category's ID in tablist-woocat.php's array (left '90' in its place for time being) (FIXED use the new menu in admin to set categories) **
 And that should be it! 
 
 <h4>Current Issues and 'working ons'</h4>
@@ -35,6 +35,6 @@ And that should be it!
 -Improve mini-cart updating. Not working with AJAX at the moment. Decided to push sidebar minicart usage to fix.<br>
 -Removing lots of useless code and tidying up files.<br>
 -CSS improvements
--will get a switch for plugin's base category to be set from admin page, not had time to do this yet.
+-FIXED categories are now able to be set from admin
 
 To see what it looks like and our process, have a look at our main site article: http://www.littleportitservices.co.uk/our-first-plugin/
