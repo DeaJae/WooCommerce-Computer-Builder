@@ -145,7 +145,6 @@ if ( ! class_exists( 'WC_Product_Builder' ) && $bool_woocommerce_active ) {
 			add_action( 'wcpb_before_product_builder', array( &$this, 'user_actions' ) );
 			add_action( 'wcpb_before_product_builder', array( &$this, 'product_actions' ) );
 			add_action( 'wcpb_before_product_builder', array( &$this, 'show_messages' ) );
-			add_action( 'wcpb_before_product_builder', array( $woocommerce, 'show_messages' ) );
 			add_action( 'wcpb_include_template', array( &$this, 'include_template' ) );
 			
 			/* BACKEND INCLUDES */
