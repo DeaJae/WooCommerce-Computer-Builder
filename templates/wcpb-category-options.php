@@ -45,7 +45,6 @@ $obj_options = new WP_Query( $arr_options_args );
 		<a href="<?php echo get_permalink($obj_option->ID) ;?>"> <?php echo get_the_post_thumbnail($obj_option->ID); ?> </a></div> <!-- directly pull thumb from array, clickable -->
 
 		<h3 class="options"><a href="<?php echo get_permalink($obj_option->ID) ;?>"> <?php echo $obj_option->post_title; ?></a></h3> <!-- clickable content!-->
-		<p><?php echo nl2br($obj_option->post_excerpt); ?></p>		<!-- post_content if your content is small enough. Post_excerpt is Product Short Description in product editing page..-->
 		<?php $product = new WC_Product($obj_option->ID); ?> <!--Directly pull pricing info from DB  -->
 			<?php echo $product->get_price_html(); ?>
 		<form class="wcpb-option-form" action="<?php echo get_permalink( get_the_ID() ); echo $i == 1 ? '?optioncat=' . $arr_optioncats[1]->slug : '?optioncat=' . $obj_optioncat->slug; ?>" method="post">
@@ -60,6 +59,7 @@ $obj_options = new WP_Query( $arr_options_args );
    
 </button>
 		</form>
+			<div class="wccb-option-des"><?php echo nl2br($obj_option->post_excerpt); ?></div>		<!-- post_content if your content is small enough. Post_excerpt is Product Short Description in product editing page..-->
 	 
 	</li>
 <?php endforeach; ?>
