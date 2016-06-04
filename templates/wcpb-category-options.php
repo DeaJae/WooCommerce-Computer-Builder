@@ -50,17 +50,17 @@ $obj_options = new WP_Query( $arr_options_args );
 		<form class="wcpb-option-form" action="<?php echo get_permalink( get_the_ID() ); echo $i == 1 ? '?optioncat=' . $arr_optioncats[1]->slug : '?optioncat=' . $obj_optioncat->slug; ?>" method="post">
 			<input type="hidden" name="option_id" value="<?php echo $obj_option->ID; ?>">
 			<input type="hidden" name="option_cat" value="<?php echo $obj_optioncat->slug; ?>">
-			<input type="hidden" name="option_qty" value="1">
+			
 			
 		<button type="submit" 
 		data-quantity="1" data-product_id="<?php echo $obj_option->ID; ?>"
     class="button alt add_to_cart_button product_type_simple">
-   <?php _e( 'add to cart', 'wcpb' ) ;?>
-   
+   <?php _e( 'add to cart', 'wcpb' ) ;?> 
 </button>
-		</form>
-			<div class="wccb-option-des"><?php echo nl2br($obj_option->post_excerpt); ?></div>		<!-- post_content if your content is small enough. Post_excerpt is Product Short Description in product editing page..-->
-	 
+		</form><p></p>
+		<div class="wccb-option-des"><?php echo nl2br($obj_option->post_excerpt); ?>	<!-- post_content if your content is small enough. Post_excerpt is Product Short Description in product editing page..-->
+		<?php echo $product->get_tags( ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce' ) . ' ', '.</span>' ); ?></div>
+		
 	</li>
 <?php endforeach; ?>
 <div class="clearfix"></div>
