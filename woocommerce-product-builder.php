@@ -452,7 +452,6 @@ if ( ! class_exists( 'WC_Product_Builder' ) && $bool_woocommerce_active ) {
 			
 			if ( count( $arr_session_data['options'] ) >= $arr_optioncat_amounts['total'] ) {
 				$this->add_error( __( 'Maximum amount of options reached!', 'wcpb' ) );
-				break;
 			}
 
 			// Check if category is in session_data, if not create it
